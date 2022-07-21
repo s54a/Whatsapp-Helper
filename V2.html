@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=0.7">
+  <title>Whatsapp Helper</title>
+  <link rel="shortcut icon" href="https://img.icons8.com/color/344/whatsapp--v5.png" type="image/x-icon">
+
+
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+:root{
+  --primary-color: #000106;
+  --secondary-color: #f0f0f0
+}
+
+::-webkit-scrollbar{
+  width: 0;
+}
+
+.dark-theme{
+  --primary-color: #f0f0f0f0;
+  --secondary-color: #000106;
+}
+body{
+  background-color: var(--primary-color);
+  transition: all 1s ease;
+  /* line-height: 2.3rem; */
+}
+
+img{
+width: 30px;
+padding: 20px;
+cursor: pointer;
+}
+
+h1{
+  color: var(--secondary-color);
+  padding: 10vh;
+  text-align: center;
+}
+
+.text-box{
+  width: 380px;
+}
+
+.text-box{
+  width: 90%;
+  padding: 8px;
+  font-size: 25px;
+}
+
+.text-box:focus{
+  border-color: dodgerblue;
+  box-shadow: 0 0 30px 0px dodgerblue;
+}
+
+/* .container{
+display: inline-block; 
+} */
+
+.container1{
+/* display: flex; */
+/* align-items: center; */
+/* justify-content: center; */
+/* min-height: 100vh; */
+/* margin-right: 50%; */
+width: 400px;
+margin: 0 auto;
+border-radius: 15px;
+padding: 25px 30px;
+/* background: rgba(255, 255, 255, 0.3); */
+}
+
+.container2{
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#btn{
+  margin-left: 40%;
+  /* transform: scale(9); */
+}
+input {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+p{
+  font-size: 25px;
+  color: var(--secondary-color);
+}
+
+.footer{
+  padding: 0;
+  margin: 18rem 00 00 0;
+}
+
+#btn{
+  cursor: pointer;
+}
+a{
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+a:hover{
+  color: dodgerblue;
+}
+
+</style>
+
+</head>
+<body>  
+  <span class="container">
+    <span class="icon">
+      <img src="https://img.icons8.com/ios-glyphs/344/ffffff/sun.png" alt="icon" id="icon">
+    </span>
+  
+    <h1>
+      <span>
+        Message to anyone on Whatsapp without saving their Phone Number
+      </span>
+    </h1>
+  </span>
+
+  <div class="container1">
+    <p>Enter the Country Code (91) before entering the Phone Number</p>
+    <br>
+    <br>
+    <form action="http://api.whatsapp.com/send" target="_blank" method="get">
+      <input name="phone" class="text-box" type="search" placeholder="something">
+      <span class="btn">
+        <input type="submit" id="btn" value="Submit">
+      </span>
+    </form>
+  </div>
+
+<footer>
+  <h1 class="footer">
+    Made By: Sooraj Gupta | <a rel="noopener norefferrer" href="https://github.com/GuptaSooraj" target="_blank">Github</a>
+  </h1>
+</footer>
+<script>
+      let icon = document.getElementById("icon");
+    icon.onclick = function(){
+      document.body.classList.toggle("dark-theme");
+      if(document.body.classList.contains("dark-theme")){
+        icon.src = "https://img.icons8.com/ios-glyphs/344/do-not-disturb-2.png";
+      }else{
+        icon.src = "https://img.icons8.com/ios-glyphs/344/ffffff/sun.png";
+      }
+    }
+</script>
+<script>
+  // (function() { 
+  //     var phone = prompt("Enter your Number with country code"); 
+  //     if (phone != null) 
+  //     { 
+  //       window.location.href = "https://api.whatsapp.com/send?phone=" + phone; 
+  //     }
+  //   })
+  // ();
+</script>
+
+</body>
+</html>
+
