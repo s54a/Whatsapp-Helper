@@ -258,6 +258,7 @@ footer{
   position: -webkit-sticky;
   position: sticky;
   margin: auto;
+  top: 100%;
   min-width: 100vw;
 }
 footer h1{
