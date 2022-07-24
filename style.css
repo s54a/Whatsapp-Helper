@@ -76,6 +76,8 @@ body{
   transition: 0.25s linear;
   animation: animation 1s;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
   -webkit-tap-highlight-color: transparent;
 }
 @keyframes animation {
@@ -252,12 +254,11 @@ input{
 
 /* CSS for Footer starts here  */
 footer{
-  position: fixed;
-  bottom: 0%;
   background-color: var(--aplha);
+  position: -webkit-sticky;
+  position: sticky;
   margin: auto;
   min-width: 100vw;
-
 }
 footer h1{
   color: var(--secondary-color);
