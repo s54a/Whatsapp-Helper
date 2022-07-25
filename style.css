@@ -111,7 +111,7 @@ header nav ul{
   z-index: 999;
   transform: translateX(-100%);
   transition: 250ms ease-out;
-  transition: left 0.3s ease;
+/*   transition: left 0.3s ease; */
   list-style-type: none;
 }
 @supports (backdrop-filter: blur(0.5rem)){
