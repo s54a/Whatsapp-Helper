@@ -110,7 +110,7 @@ header nav ul{
   padding: min(10vh, 10rem) 0rem;
   z-index: 999;
   transform: translateX(-100%);
-  transition: 250ms ease-out;
+  transition: 150ms ease-out;
 /*   transition: left 0.3s ease; */
   list-style-type: none;
 }
