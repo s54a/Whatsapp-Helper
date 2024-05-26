@@ -19,7 +19,7 @@ body {
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  background-color: #fff;
+  background: #fefefe;
   color: #000;
 }
 
@@ -37,7 +37,7 @@ button {
   border: none;
   border-radius: 5px;
   outline: none;
-  background: #f0f0f0;
+  background-color: #fff;
   width: 100%;
   margin-top: 1rem;
 }
@@ -62,7 +62,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   z-index: 10;
 }
@@ -117,6 +117,10 @@ input[type="number"] {
 
   button:hover {
     background-color: #25d366cc;
+  }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
