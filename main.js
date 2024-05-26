@@ -38,7 +38,7 @@ function updateLink() {
   const whatsappLink = `https://wa.me/${countryCode}${phoneNumber}${
     message ? `?text=${message}` : ""
   }`;
-  linkContainer.innerHTML = `<a href="${whatsappLink}" target="_blank">${whatsappLink}</a>`;
+  linkContainer.innerHTML = `<a href="${whatsappLink}" id="whatsappLink" target="_blank">${whatsappLink}</a>`;
   linkContainer.style.margin = "1rem";
 }
 
