@@ -1,21 +1,24 @@
 import "./style.css";
 import "./particle";
 
+// Wait for the DOM to be fully loaded
+const countryCodeInput = document.getElementById("countryCode");
 const phoneNumberInput = document.getElementById("phoneNumber");
 const messageInput = document.getElementById("message");
 const linkContainer = document.getElementById("linkContainer");
 const copyButton = document.getElementById("copyButton");
 const openChatButton = document.getElementById("openChatButton");
 
+countryCodeInput.addEventListener("input", updateLink);
 phoneNumberInput.addEventListener("input", updateLink);
 messageInput.addEventListener("input", updateLink);
 copyButton.addEventListener("click", copyLink);
 openChatButton.addEventListener("click", openChat);
 
 function updateLink() {
-  let phoneNumber = phoneNumberInput.value.trim();
+  const countryCode = countryCodeInput.value.trim();
+  const phoneNumber = phoneNumberInput.value.trim();
   const message = encodeURIComponent(messageInput.value.trim());
-  let countryCode = "91";
 
   // Clear link if phone number input is empty
   if (phoneNumber === "") {
@@ -23,23 +26,34 @@ function updateLink() {
     return;
   }
 
+  // Validate country code length
+  if (countryCode.length < 1 || countryCode.length > 4) {
+    linkContainer.innerHTML = "Country code must be between 1 and 4 digits.";
+    linkContainer.style.margin = "1rem";
+    return false;
+  } else {
+    linkContainer.style.margin = "0";
+  }
+
   // Validate phone number length
   if (phoneNumber.length < 4 || phoneNumber.length > 15) {
     linkContainer.innerHTML = "Phone number must be between 4 and 15 digits.";
+    linkContainer.style.margin = "1rem";
     return false;
-  }
-
-  // Check if country code is provided or not
-  if (phoneNumber.length > 10) {
-    countryCode = phoneNumber.substring(0, phoneNumber.length - 10);
-    phoneNumber = phoneNumber.substring(phoneNumber.length - 10);
+  } else {
+    linkContainer.style.margin = "0";
   }
 
   const whatsappLink = `https://wa.me/${countryCode}${phoneNumber}${
     message ? `?text=${message}` : ""
   }`;
-  linkContainer.innerHTML = `<a href="${whatsappLink}" id="whatsappLink" target="_blank">${whatsappLink}</a>`;
-  linkContainer.style.margin = "1rem";
+
+  if (whatsappLink) {
+    linkContainer.innerHTML = `<a href="${whatsappLink}" id="whatsappLink" target="_blank">${whatsappLink}</a>`;
+    linkContainer.style.margin = "1rem";
+  } else {
+    linkContainer.style.margin = "0";
+  }
 }
 
 function copyLink() {
@@ -47,17 +61,11 @@ function copyLink() {
 
   if (link) {
     const tempInput = document.createElement("input");
-
     tempInput.value = link.href;
-
     document.body.appendChild(tempInput);
-
     tempInput.select();
-
     document.execCommand("copy");
-
     document.body.removeChild(tempInput);
-
     alert("Link copied to clipboard!");
   } else {
     alert("Please enter a valid phone number.");
@@ -73,12 +81,4 @@ function openChat() {
   }
 }
 
-function toggleHidden() {
-  const hiddenContent = document.querySelector(".hidden");
-  hiddenContent.classList.toggle("visible");
-
-  // Scroll to the hidden content
-  if (hiddenContent.classList.contains("visible")) {
-    hiddenContent.scrollIntoView({ behavior: "smooth" });
-  }
-}
+updateLink();

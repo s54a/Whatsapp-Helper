@@ -42,7 +42,7 @@ button {
   margin-top: 1rem;
 }
 
-#phoneNumber {
+#countryCode {
   margin: 0;
 }
 
@@ -155,4 +155,8 @@ a::after {
 a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+#whatsappLink {
+  text-align: center;
 }
