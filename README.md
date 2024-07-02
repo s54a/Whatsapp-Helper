@@ -12,4 +12,4 @@ I have used Particles by [Vincent Garreau](https://github.com/VincentGarreau/par
 
 ## Deployed Link
 
-[https://w12r.vercel.app/](https://w12r.vercel.app/)
+[https://w3r.vercel.app/](https://w3r.vercel.app/)
