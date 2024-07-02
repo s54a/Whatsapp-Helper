@@ -12,4 +12,4 @@ I have used Particles by [Vincent Garreau](https://github.com/VincentGarreau/par
 
 ## Deployed Link
 
-[https://whatsapphelper0.vercel.app/](https://whatsapphelper0.vercel.app/)
+[https://w12r.vercel.app/](https://w12r.vercel.app/)
